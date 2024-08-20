@@ -1,36 +1,36 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Follow following steps to reproduce the issue
 
-First, run the development server:
+## Issue
+
+[thirdPartyErorFilterIntegration](https://docs.sentry.io/platforms/javascript/guides/hapi/configuration/filtering/#using-thirdpartyerrorfilterintegration) issue with nextjs application.
+
+## Sentry working fine without thirdPartyErrorFilterIntegration
+
+Set sentry related values in config.js file
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [sentry-example-page](http://localhost:3719/sentry-example-page) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Click on Throw Frontend error button, new issue is created on sentry project.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Sentry not creating new issues with thirdPartyErrorFilterIntegration
 
-## Learn More
+1. Set sentry related values in config.js file
+2. Uncomment line 30-41 in sentry.client.config.ts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm i
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [sentry-example-page](http://localhost:3719/sentry-example-page) with your browser to see the result.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Click on Throw Frontend error button, new issue is not created on sentry project.
