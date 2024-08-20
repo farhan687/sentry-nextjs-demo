@@ -1,10 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Problem
 
-Follow following steps to reproduce the issue
-
-## Issue
-
-[thirdPartyErorFilterIntegration](https://docs.sentry.io/platforms/javascript/guides/hapi/configuration/filtering/#using-thirdpartyerrorfilterintegration) issue with nextjs application.
+[thirdPartyErorFilterIntegration](https://docs.sentry.io/platforms/javascript/guides/hapi/configuration/filtering/#using-thirdpartyerrorfilterintegration) feature is not working with nextjs application.
 
 ## Sentry working fine without thirdPartyErrorFilterIntegration
 
@@ -23,7 +19,7 @@ Click on Throw Frontend error button, new issue is created on sentry project.
 ## Sentry not creating new issues with thirdPartyErrorFilterIntegration
 
 1. Set sentry related values in config.js file
-2. Uncomment line 30-41 in sentry.client.config.ts
+2. Uncomment [line 30-41 in sentry.client.config.ts](https://github.com/farhan687/sentry-nextjs-demo/blob/main/sentry.client.config.ts#L30-L41)
 
 ```bash
 npm i
